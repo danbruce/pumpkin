@@ -32,6 +32,9 @@ extern crate core;
 #[macro_use] extern crate newtype_derive;
 extern crate ramp;
 extern crate rand;
+extern crate num;
+#[macro_use(lazy_static)]
+extern crate lazy_static;
 
 mod prime;
 pub use prime::Prime;

@@ -12,6 +12,8 @@ custom_derive = "0.1.*"
 newtype_derive = "0.1.*"
 ramp = "0.1.*"
 rand = "0.3.*"
+num = "*"
+lazy_static = "*"
 
 [lib]
 name = "pumpkin"
