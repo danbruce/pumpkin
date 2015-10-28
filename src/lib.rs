@@ -1,6 +1,7 @@
 #![feature(augmented_assignments)]
 #![feature(core)]
 #![feature(custom_derive)]
+#![feature(test)]
 
 /// # The Pumpkin Prime Number Generator
 ///
@@ -35,6 +36,25 @@ extern crate rand;
 extern crate num;
 #[macro_use(lazy_static)]
 extern crate lazy_static;
+extern crate test;
 
 mod prime;
 pub use prime::Prime;
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use test::Bencher;
+
+    #[test]
+    // generates a prime successfully
+    fn synopsis() {
+        println!("{} is probably prime.", Prime::new(2048));
+    }
+
+    #[bench]
+    fn benchmark_synopsis(b: &mut Bencher) {
+        b.iter(|| println!("{} is probably prime.", Prime::new(2048)));
+    }
+}
