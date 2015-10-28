@@ -50,11 +50,11 @@ mod tests {
     #[test]
     // generates a prime successfully
     fn synopsis() {
-        println!("{} is probably prime.", Prime::new(2048));
+        Prime::new(1024);
     }
 
     #[bench]
-    fn benchmark_synopsis(b: &mut Bencher) {
-        b.iter(|| println!("{} is probably prime.", Prime::new(2048)));
+    fn benchmark(b: &mut Bencher) {
+        b.iter(|| Prime::new(1024));
     }
 }
